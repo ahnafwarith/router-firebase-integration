@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
@@ -12,7 +11,7 @@ const Header = () => {
             <Link className='anchor' to='/products'>Products</Link>
             <Link className='anchor' to='/orders'>Orders</Link>
             <Link className='anchor' to='/register'>Register</Link>
-            <span>{user?.displayName ? <p>{user?.displayName}</p> : <p></p>}</span>
+            <span>{user?.displayName && <p>Welcome, {user?.displayName}</p>}</span>
             {
                 user?.uid
                     ?
